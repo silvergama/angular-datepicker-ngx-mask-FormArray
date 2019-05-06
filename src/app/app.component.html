@@ -1,0 +1,13 @@
+<div [formGroup]="form">
+  <div class="col" formArrayName="dates" *ngFor="let end of form.get('dates').controls; let i = index">
+      <div class="form-group" [formGroupName]="i">
+          <mat-form-field appearance="legacy" class="w-100">
+              <input matInput [matDatepicker]="picker" placeholder="Data" maxlength="10" mask="00/00/0000">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      </div>
+  </div>
+</div>
+
+<!-- Add formControlName="date" in input to show error  -->
